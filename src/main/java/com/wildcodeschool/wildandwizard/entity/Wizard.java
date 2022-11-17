@@ -1,6 +1,5 @@
 package com.wildcodeschool.wildandwizard.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class Wizard {
     @JoinTable(name = "wizard_course",
             joinColumns = @JoinColumn(name = "wizard_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
-    private List<Wizardcourse> wizardcourses = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
 
     public Wizard() {
@@ -93,11 +91,11 @@ public class Wizard {
         this.muggle = muggle;
     }
 
-    public List<Wizardcourse> getWizardCourses() {
-        return wizardcourses;
+    public List<Course> getCourses() {
+        return courses;
     }
 
-    public void setPotionIngredients(List<Wizardcourse> wizardcourses) {
-        this.wizardcourses = wizardcourses;
+    public void setCourse(List<Course> courses) {
+        this.courses = courses;
     }
 }

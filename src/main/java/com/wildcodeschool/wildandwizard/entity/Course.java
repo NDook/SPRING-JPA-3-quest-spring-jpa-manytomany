@@ -17,8 +17,8 @@ public class Course {
     private Long id;
     private String name;
     
-    @ManyToMany(mappedBy = "course")
-    private List<Wizardcourse> wizardcourses = new ArrayList<>();
+    @ManyToMany(mappedBy = "courses")
+    private List<Wizard> wizards = new ArrayList<>();
 
     public Course() {
     }
@@ -43,11 +43,11 @@ public class Course {
         this.name = name;
     }
 
-    public List<Wizardcourse> getWizardCourses() {
-        return wizardcourses;
+    public List<Wizard> getWizards() {
+        return wizards;
     }
 
-    public void setPotionIngredients(List<Wizardcourse> wizardcourses) {
-        this.wizardcourses = wizardcourses;
+    public void setWizards(List<Wizard> wizards) {
+        this.wizards = wizards;
     }
 }
